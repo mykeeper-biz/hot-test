@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+    <h2>List of hotties </h2>
+    {% if hotties %}
+        <ul>
+            {% for hoti in hotties %}
+                <li><a href='/hotties/view/{{ hoti.id }}'>{{ hoti.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href='/hotties/edit'>Create New</a>
+{% endblock %}

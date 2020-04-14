@@ -1,0 +1,12 @@
+## SAMPLE for now  TODO hook up web pages, build docker image, start app test rest
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+  # this configures Django application to use attached postgres database that is run on `postgres` host
+  - pip install pipenv
+  - pipenv install
+  - python tester.py

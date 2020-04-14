@@ -1,0 +1,34 @@
+/**
+ * colors used : https://flatuicolors.com/palette/defo
+ */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    width: 100%;
+    background-color: black;
+}
+
+.navbar a {
+    font-family: Sans-Serif;
+    display: inline-block;
+    text-decoration: none;
+    font-style: none;
+    color: white;
+    height: 64px;
+    line-height: 64px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.navbar a:hover {
+    background-color: #f6b93b;
+    transition: .2s;
+}
+
