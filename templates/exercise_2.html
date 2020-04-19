@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+    <h2>Exersice 2</h2>
+    <h5>Select Region, Bank Holiday and Location<br>Get year with the highest temeprature</h5>
+    <form method='POST'>
+        <div>
+        </div>
+        <div>
+            <td>
+                <label for='exe1_division'>
+                    Select Region
+                </label>
+                <select name='exe1_division' width="300px">
+                {% for division in divisions %}
+                    <option id='{{ division }}' value="{{ division }}" SELECTED>{{ division }}</option>
+                {% endfor %}
+                </select>
+            <!--
+            <select name="Bikes" multiple>
+                <option value="HeroHonda">HeroHonda</option>
+                <option value="Splender">Splender</option>
+                <option value="Ninja">Ninja</option>
+                <option value="Pulsav">Pulsav</option>
+            </select>
+            <input type="submit">
+            -->
+            </td>
+        <td></td>
+        <td>
+        <label for='exe1_holiday'>
+            Select Bank Holiday
+        </label>
+        <select name="exe1_holiday" width="300px">
+        {% for holiday in holidays %}
+            <option id="{{ holiday }}" value="{{ holiday }}" SELECTED>{{ holiday }}</option>
+        {% endfor %}
+        </select>
+        </td>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div>
+        <div>
+        <td>
+        <label for='exe1_location'>
+            Enter Location
+            <input type='text' id='exe1_location' name='exe1_location'/>
+        </label>
+        </td>
+        <td></td>
+        <td></td>
+        </div>
+        <input type='submit' name='Submit' value='Show Results'/>
+    </form>
+{% endblock %}

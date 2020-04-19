@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+    <h2>Min and Max temp on {{ holiday }} {{ year }}</h2>
+    <form method='POST'>
+        <label for='exe1_division'>
+            Region
+            <input type='text' value="{{ division }}"/>
+        </label>
+        <label for='exe1_location'>
+            Location
+            <input type='text' value="{{ location }}"/>
+        </label>
+        <label for='exe1_holiday'>
+            Bank Holiday
+            <input type='text' value="{{ holiday }}"/>
+        </label>
+        <label for='exe1_year'>
+            Select the year
+            <input type='text' value="{{ year }}"/>
+        </label>
+        <label for='exe1_content'>
+            Content
+            <textarea value="{{ message }}" name='exe1_content'></textarea>
+        </label>
+        <input type='submit' name='Submit' value='Close'/>
+    </form>
+    <a href='exercise_1.html'>Lookup another</a>
+{% endblock %}

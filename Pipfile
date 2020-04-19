@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 flask = "*"
 certifi = "*"
+wheel = "*"
 urllib3 = "*"
 
 [requires]

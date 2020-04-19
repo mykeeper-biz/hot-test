@@ -1,11 +1,17 @@
 import json
 import os
+import time
 import random
 from string import ascii_lowercase
 from datetime import date
 
 
 DB_FILENAME = 'database.json'
+
+
+def get_file_mod_stamp(file_path_name):
+    (mode, ino, dev, nlink, uid, gid, size, atime, mtime, ctime) = os.stat(file_path_name)
+    return mtime
 
 def check_date(y, m, d):
     if 2015 < int(y) <= int(date.today().year):

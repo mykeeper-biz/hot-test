@@ -1,34 +1,35 @@
 #!/usr/bin/env python3
-
+from url_con_man.url_con_man import PoolMan
 import json
-
-import certifi
-import urllib3
+from url_con_man.url_con_man import PoolMan
 
 
-def getCityIdUrl(city):
-    return 'https://www.metaweather.com/api/location/search/?query={0}'.format(city)
+class City():
+    _pm = PoolMan()
 
+    def __init__(self):
+        pass
 
-def getCityId(city):
-    cityUrl = getCityIdUrl(city)
+    # @_pm.setter
+    def pm(self, value):
+        self._pm = value
 
-    # print('Looking up {0}'.format(city))
+    def _get_city_woeid_url(self, location):
+        return 'https://www.metaweather.com/api/location/search/?query={0}'.format(location)
+
+    def get_city_woeid(self, location):
     try:
         # Set up the pool mannager session
-        http = urllib3.PoolManager(ca_certs=certifi.where())
-        resp = http.request('GET', cityUrl)
-
-        if resp.status == 200:
-            data_dict = json.loads(resp.data.decode('utf-8'))  # ['json']
-            if data_dict != []:
+            self._pm.action = 'GET'
+            self._pm.url = self._get_city_woeid_url(location)
+            resp = self._pm.request()
+            data_dict = json.loads(resp.data.decode('utf-8'))
+            if data_dict:
                 return data_dict[0]['woeid']
-    except:
-        raise Exception('Something went wrong!')
-
-#    else:
-#        print('Return code is [{0}] message is [{1}]'.format(rs,resp.data.decode('utf-8')))
-#        return data_dict[0]
+            else:
+                return None
+        except Exception:
+            raise Exception('Something went wrong getting the location id for {0}!'.format(location))
 
 # [{
 # 'title': 'Liverpool',
@@ -43,8 +44,4 @@ def getCityId(city):
 # city = 'Penzance'  # 31889
 # city = 'Edinburgh'  # 19344
 # city = 'Belfast' # 44544
-# woeid = getCityId(city)
-# if woeid:
-#     print(woeid)
-# else:
-#     print('Location not registered in database')
+        # woeid = get_city_woeid(city)

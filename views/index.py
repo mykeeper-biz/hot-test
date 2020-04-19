@@ -9,4 +9,4 @@ bp = Blueprint(
 
 @bp.route('/')
 def show():
-    return redirect('/hotties')
+    return redirect('/')

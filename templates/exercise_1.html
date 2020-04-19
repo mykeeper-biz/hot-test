@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+    <h2>Exersice 1</h2>
+    <h5>Select Region, Bank Holiday and Year<br> Get the high and low temperature</h5>
+
+    <form method='POST'>
+        <div>
+            <td></td>
+            <td></td>
+            <td></td>
+        </div>
+        <div>
+            <td>
+                <label for='exe1_division'>
+                    Select Region
+                </label>
+                <select name="exe1_division" width="300px">
+                    {% for division in divisions %}
+                        <option id="{{ division }}" value="{{ division }}" SELECTED>{{ division }}</option>
+                    {% endfor %}
+                </select>
+            </td>
+            <td></td>
+            <td>
+                <label for='exe1_holiday'>
+                    Select Bank Holiday
+                </label>
+                <select name="exe1_holiday" width="300px">
+                    {% for holiday in holidays %}
+                        <option id="{{ holiday }}" value="{{ holiday }}" SELECTED>{{ holiday }}</option>
+                    {% endfor %}
+                </select>
+            </td>
+            <td>
+                <label for='exe1_year'>
+                    Select Year
+                </label>
+                <select name="exe1_year" width="100px">
+                    {% for year in years %}
+                        <option id="{{ year }}" value="{{ year }}" SELECTED>{{ year }}</option>
+                    {% endfor %}
+                </select>
+            </td>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div>
+        <div>
+            <td>
+                <label for='exe1_location'>
+                    Enter Location
+                    <input type='text' name='exe1_location'/>
+                </label>
+            </td>
+            <td></td>
+            <td>
+                <input type='submit' name='Submit' value='Show Results'/>
+            </td>
+        </div>
+    </form>
+    <!-- a href='/exe1/view'>Show Results</a -->
+{% endblock %}
