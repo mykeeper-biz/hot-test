@@ -18,7 +18,7 @@ class City():
         return 'https://www.metaweather.com/api/location/search/?query={0}'.format(location)
 
     def get_city_woeid(self, location):
-    try:
+        try:
         # Set up the pool mannager session
             self._pm.action = 'GET'
             self._pm.url = self._get_city_woeid_url(location)
