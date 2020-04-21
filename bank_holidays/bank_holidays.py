@@ -64,8 +64,8 @@ class BankHolidays():
         for divi in data_dict:
             d = data_dict[divi]['division']
             divi_list.append(d)
-            print('Available divisions in the UK')
-            print(divi_list)
+        print('Available divisions in the UK')
+        print(divi_list)
 
         return divi_list
 
@@ -85,8 +85,8 @@ class BankHolidays():
         if len(bankholidays_set): # Add the reduced set as a list
             for s in bankholidays_set:
                 bankholidays_list.append(s)
-            print('Available unique bank holidays in [{0}]'.format(division))
-            print(bankholidays_list)
+        print('Available unique bank holidays in [{0}]'.format(division))
+        print(bankholidays_list)
         return bankholidays_list
 
     def get_date_from_holiday_and_year(self, division, holiday, year):
@@ -107,7 +107,6 @@ class BankHolidays():
                             return '{0}/{1}/{2}'.format(yyyy, mm, dd)
         return ''
 
-
     def get_specific_holiday_date_list(self, division, holiday):
         # Divisions 'england-and-wales', 'scotland', 'northern-ireland'
         data_dict = self._get_holidays()
@@ -120,7 +119,7 @@ class BankHolidays():
                 for event in events:
                     if holiday == event['title']:
                         yy, mm, dd = get_date_parts(event['date'])
-                        if check_date(yy, mm, dd): # If this is a valid past date, add it
+                        if check_date(yy, mm, dd):  # If this is a valid past date, add it
                             bankholidays_list.append(event['date'])
         print('{0} fell on the following dates:'.format(holiday))
         print(bankholidays_list)

@@ -49,8 +49,8 @@ class Weather():
                     if max_temp < max:
                         max_temp = max
         except:
-                raise Exception(
-                    'Something went wrong getting min and max temp for [{0}/{1}/{2}/{3}]'.format(woeid, y, m, d))
+            raise Exception(
+                'Something went wrong getting min and max temp for [{0}/{1}/{2}/{3}]'.format(woeid, y, m, d))
         return max_temp, min_temp
 
     def get_hottest_temp_on_holiday_at_location(self, division, woeid, holiday):

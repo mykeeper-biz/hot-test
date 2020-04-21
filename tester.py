@@ -28,7 +28,7 @@ class Tester():
 
 
     def run_exe1(self, division, location, bhday, the_year):
-    # Exersize 1
+        # Exersize 1
         woeid = self._locations.get_city_woeid( location )
         the_date = self._hday.get_date_from_holiday_and_year(division, bhday,the_year)
         y, m, d = get_date_parts(the_date)     # '2019-12-26'
@@ -40,7 +40,7 @@ class Tester():
                                                    y, m, d))
 
     def run_exe2(self, division, location, bhday):
-    # Exersize 2
+        # Exersize 2
         woeid = self._locations.get_city_woeid( location )
         thehottestdate, max_temp = self._weather.get_hottest_temp_on_holiday_at_location(division, woeid, bhday)
         print('The hottest [{2}] was [{4}°] on {3}'.format(division,
